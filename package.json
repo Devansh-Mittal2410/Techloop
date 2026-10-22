@@ -1,0 +1,18 @@
+{
+  "name": "techloop-operations",
+  "private": true,
+  "workspaces": [
+    "apps/admin",
+    "apps/delivery",
+    "services/api"
+  ],
+  "scripts": {
+    "dev:api": "npm --workspace services/api run dev",
+    "dev:admin": "npm --workspace apps/admin run dev",
+    "dev:demo": "bash ./scripts/start-demo.sh",
+    "dev:delivery": "npm --workspace apps/delivery run start",
+    "dev:delivery:clear": "npm --workspace apps/delivery run start -- --force",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}
